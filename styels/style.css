@@ -1,0 +1,270 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text-color: #3e2723;
+  --text-active: #c79408bd;
+  --main-padding: 60px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5ecdc;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-inline: 15px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 7px 15px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo .seprator {
+  width: 2px;
+  height: 50px;
+  background-color: var(--text-color);
+}
+
+.logo a p {
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: "Berkshire Swash", cursive;
+  font-optical-sizing: auto;
+}
+
+.logo a p span {
+  font-size: 10px;
+  display: block;
+}
+.search {
+  position: relative;
+}
+
+.search > i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #3e2723;
+}
+
+.input-search {
+  width: 200px;
+  height: 40px;
+  padding-inline: 15px;
+  border: none;
+  border-radius: 9999px;
+  transition: all ease-in-out 0.2s;
+}
+
+.input-search:focus {
+  width: 280px;
+  box-shadow: 0 0 0 3px #3e272398;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.items .item a {
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  transition: 0.3s ease-in-out all;
+}
+
+.items .item a:focus,
+.items .item a:hover {
+  color: var(--text-active);
+}
+
+@media (min-width: 1280px) {
+  .header .content {
+    width: 1250px;
+  }
+}
+
+/* Hero Section */
+
+.heroSection {
+  background-image: url(../Images/landing.webp);
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  min-height: calc(100vh - 80px);
+}
+
+.heroSection .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: inherit;
+}
+
+.heroSection .container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.heroSection .container .content img {
+  max-width: 600px;
+  transition: all 1s ease-in-out;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heroSection .container .content img.fade-out {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.heroSection .container .content img.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heroSection .container .content .text {
+  max-width: 400px;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+  transform: translateX(0);
+}
+
+.heroSection .container .content .text.disappear {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.heroSection .container .content .text.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.heroSection .container .content .text span {
+  color: brown;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.heroSection .container .content .text .text-slider {
+  font-size: 60px;
+  font-family: "Berkshire Swash", cursive;
+  font-weight: 700;
+  margin: 10px 0 20px;
+  color: var(--text-color);
+}
+
+.heroSection .container .content .text p {
+  font-size: 22px;
+  line-height: 1.7;
+  color: #333333b6;
+  font-weight: 500;
+}
+
+.heroSection .container .content .text .orderNow {
+  width: 160px;
+  margin-top: 40px;
+  padding: 15px 0;
+  background-color: transparent;
+  border: 1px solid #3e2723;
+  font-size: 20px;
+  border-radius: 9999px;
+  color: var(--text-color);
+  transition: all ease-in-out 0.3s;
+}
+
+.heroSection .container .content .text .orderNow:hover {
+  background-color: #3e2723;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.heroSection .container .navigation {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 500px;
+  /* margin: 80px auto 0; */
+}
+
+.heroSection .container .navigation .item {
+  color: #3e2723;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.heroSection .container .navigation .item.active {
+  border-bottom: 1px dashed #3e2723;
+  color: var(--text-active);
+}
+
+@media (min-width: 1280px) {
+  .container {
+    width: 1250px;
+  }
+}
