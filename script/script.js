@@ -19,8 +19,7 @@ const textOfSlider = [
 ];
 
 let slideNumber = 1;
-let sliderInterval; // Variable to store the interval ID
-
+let sliderInterval;
 // Handles the fade-out and disappear effects for the transition.
 function startTransitionEffect() {
   imageSlider.classList.add("fade-out");
