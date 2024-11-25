@@ -18,6 +18,7 @@ const textOfSlider = [
   "Set Chocolate cake",
 ];
 
+// Hero Section
 let slideNumber = 1;
 let sliderInterval;
 // Handles the fade-out and disappear effects for the transition.
@@ -114,3 +115,24 @@ function initializeSlider() {
 
 // First render
 initializeSlider();
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const menuIcon = document.querySelector(".menu-icon");
+//   const navItems = document.querySelector(".items");
+
+//   menuIcon.addEventListener("click", () => {
+//     navItems.classList.toggle("active");
+//   });
+// });
+
+//End of Hero Section
+// const product = {
+//   id: "number",
+//   name: "string",
+//   description: "string",
+//   category: "string",
+//   price: "Number",
+//   offer: "Boolean",
+//   rate: "Number",
+//   ingredients: [],
+// };
