@@ -1,0 +1,164 @@
+/* General Reset */
+@import url("global-style.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-image: url("../images//landing.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
+.login-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.login-box > .photo img {
+  width: 290px;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-active);
+  margin-bottom: 10px;
+  font-family: var(--main-font);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--paragraph-color);
+}
+
+/* Input Styles */
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--paragraph-color);
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--text-active);
+}
+
+/* Button */
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-btn {
+  background: var(--text-active);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: burlywood;
+}
+
+.back-btn {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: var(--text-active);
+  background: transparent;
+  padding: 10px 20px;
+}
+
+/* Links */
+.links {
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.links a {
+  color: var(--text-active);
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Password Container */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+}
+
+.toggle-password i {
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover i {
+  color: var(--text-active);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    width: max-content;
+  }
+}

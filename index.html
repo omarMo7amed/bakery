@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zebda W Zaatar</title>
     <link rel="icon" type="image/webp" href="Images/icon.webp" />
-    <link rel="stylesheet" href="styels/style.css" />
+    <link
+      rel="preload"
+      href="styels/style.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="styels/header.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="styels/heroSection.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <link rel="preload" href="Images/slider-1.webp" as="image" />
+
+    <link rel="stylesheet" href="styels/footer.css" />
+    <link rel="stylesheet" href="styels/bestSeller.css" />
+    <link rel="stylesheet" href="styels/about.css" />
+    <link rel="stylesheet" href="styels/specialService.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
@@ -181,8 +204,86 @@
           All Products
         </button>
       </section>
-    </div>
 
+      <!-- Special Service Section -->
+      <section class="special-service">
+        <div class="container">
+          <div class="special-cake">
+            <div class="text">
+              <h2 class="special-text">Special Cake</h2>
+              <img src="Images/heading-separate.webp" alt="separator" />
+              <p>
+                Indulge in the magic of our Special Cake, crafted with the
+                finest ingredients and a touch of love. Each bite offers a
+                perfect blend of flavor and texture, making your celebrations
+                unforgettable.
+              </p>
+            </div>
+
+            <img
+              class="special"
+              src="Images/special-cake.webp"
+              alt="special-cake"
+            />
+          </div>
+          <div class="special-baker">
+            <div class="text">
+              <h2 class="special-text">The Good Baker</h2>
+              <img src="Images/heading-separate.webp" alt="separator" />
+              <p>
+                Discover the heart of our bakery, where tradition meets
+                innovation. Our skilled bakers bring you the freshest bread and
+                pastries, ensuring every treat is a masterpiece of taste and
+                quality.
+              </p>
+            </div>
+
+            <img
+              class="special"
+              src="Images/the-best-bakery.webp"
+              alt="the-best-bakery"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="head">
+          <h2>Store Address</h2>
+          <img src="Images//heading-separate.webp" alt="" />
+        </div>
+
+        <div class="content">
+          <div class="box">
+            <h4>Store at Egypt</h4>
+            <p>16122 Nile Street, Giza, Cairo, Egypt</p>
+            <p>Email: test@example.com</p>
+            <p>Phone: +20 111 29 50 811</p>
+          </div>
+          <div class="box">
+            <h4>Store at Cairo</h4>
+            <p>5th Settlement, New Cairo, Egypt</p>
+            <p>Email: test@example.com</p>
+            <p>Phone: +20 111 29 50 811</p>
+          </div>
+
+          <div class="box">
+            <h4>Open Time Working</h4>
+            <p>Monday – Friday: 08:00 am – 08:30 pm</p>
+            <p>Saturday – Sunday: 10:00 am – 04:30 pm</p>
+          </div>
+        </div>
+        <div class="icon">
+          <a href="/">
+            <img src="Images/icon.webp" alt="icon" />
+          </a>
+          <p>Copy Right &copy; Zebda W Zaatar</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/bestSellerSection.js" async></script>
     <script src="script/script.js" defer></script>
   </body>
 </html>

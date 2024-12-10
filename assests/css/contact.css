@@ -1,0 +1,153 @@
+@import url("global-style.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-image: url("../images/contact.webp");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  width: 100%;
+  padding: 30px;
+  animation: fadeIn 1s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: var(--main-font);
+  color: var(--text-active);
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--paragraph-color);
+  margin-bottom: 30px;
+}
+
+.contact-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--paragraph-color);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: var(--text-active);
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.send-btn {
+  background: var(--text-active);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.send-btn:hover {
+  background: burlywood;
+}
+
+.back-btn {
+  display: block;
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+/* Contact Info */
+.contact-info {
+  flex: 1;
+  background-image: url("../images/contact-info-bg.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 20px;
+  color: red;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .buttons {
+    flex-direction: column-reverse;
+  }
+}

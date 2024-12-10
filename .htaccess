@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /Bakery/
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ pages/$1.php [L]
+
+# Redirect root to index
+RewriteRule ^$ pages/index.php [L]

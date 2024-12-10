@@ -1,0 +1,79 @@
+@import url("global-style.css");
+
+.order-page {
+  background-image: url(../images/landing.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0 40px;
+}
+
+h1 {
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+label {
+  text-transform: capitalize;
+  flex-basis: 20%;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-active);
+  font-weight: bold;
+}
+
+.order-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.group-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.input-field {
+  width: 100%;
+  flex: 1;
+  padding: 15px 20px;
+  border-radius: 9999px;
+  outline: none;
+  font-size: 1rem;
+  border: none;
+  transition: all ease-in-out 0.2s;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 3px var(--text-active);
+}
+
+.btn-submit {
+  background-color: var(--text-active);
+  border: 1px solid var(--text-active);
+  padding: 15px 20px;
+  border-radius: 9999px;
+  font-size: 20px;
+  margin-top: 20px;
+  color: var(--text-active);
+  color: #fff;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.btn-submit:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 650px) {
+  .group-input {
+    flex-wrap: wrap;
+  }
+
+  label {
+    flex-basis: 100%;
+  }
+}
