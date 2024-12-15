@@ -40,18 +40,20 @@
           <li class="item">
             <a href="contact">Contact</a>
           </li>
-          <li class="login-button">
-            <a href="login">
-           login
-            </a>
-          </li>
-          <li class="item"> | </li>
+          
           <li class="cartItem">
             <span class="cart-quantity"></span>
             <a href="cart">
             <i class="fa-solid fa-cart-shopping"></i>
             </a>
           </li>
+          <li class="login-button">
+            <a href="login">
+                  login
+            </a>
+          </li>
         </nav>
       </div>
+      <div class="overlay"></div>
+
     </header>

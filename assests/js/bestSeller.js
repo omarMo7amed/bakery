@@ -30,6 +30,7 @@ const closeModal = () => {
 const fetchProducts = async () => {
   try {
     const response = await fetch("http://localhost/Bakery/api/products.php");
+    console.log(response);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch products. Status: ${response.status}`);

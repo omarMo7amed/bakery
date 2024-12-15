@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $card_number = $data['card_number'] ?? null;
     $cvv = $data['cvv'] ?? null;
     $name_on_card = $data['name_on_card'] ?? null;
-    //! authenticated?
-    // $authResponse = $jwtService->isAuthenticated();
-    // if ($authResponse !== true) {
-    //     echo $authResponse;
-    //     return;
-    // }
+    // ! authenticated?
+    $authResponse = $jwtService->isAuthenticated();
+    if ($authResponse !== true) {
+        echo $authResponse;
+        return;
+    }
     echo $pyamentService->CreateNewPyament($card_number, $cvv, $name_on_card);
 
 }

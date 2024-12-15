@@ -1,3 +1,13 @@
+<?php 
+
+require_once '../helpers/helper.php';
+ if(isAuthenticated()){
+  header('Location: menu');
+  return null;
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -10,17 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalCancelButton = document.querySelector(".modal-cancel");
   const checkoutButton = document.querySelector(".checkout-btn");
   let itemToRemoveIndex = null;
-  const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   const checkIfCartIsEmpty = () => {
-    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
     const emptyCartMessage = document.querySelector(".empty-cart-message");
 
-    if (cartData.length === 0) {
+    if (cart.length === 0) {
       cartContainer.style.display = "none";
-      emptyCartMessage.style.display = "flex";
+      emptyCartMessage.style.display = "block";
     } else {
-      cartContainer.style.display = "flex";
+      cartContainer.style.display = "block";
       emptyCartMessage.style.display = "none";
     }
   };
@@ -41,11 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load cart data from localStorage
   // Update loadCartFromLocalStorage to include checkIfCartIsEmpty
   const loadCartFromLocalStorage = () => {
-    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     cartContainer.innerHTML = "";
 
-    cartData.forEach((item, index) => {
+    cart.forEach((item, index) => {
       const cartItem = document.createElement("div");
       cartItem.classList.add("cart-item");
 
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateTotal();
-    checkIfCartIsEmpty(); // Check if cart is empty after loading items
+    checkIfCartIsEmpty();
   };
 
   // Update total prices
@@ -140,10 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update cart data in localStorage
   const updateCart = (item) => {
-    const updatedCartData = cartData.map((cartItem) =>
+    const updatedcart = cart.map((cartItem) =>
       cartItem.id === item.id ? item : cartItem
     );
-    localStorage.setItem("cart", JSON.stringify(updatedCartData));
+    localStorage.setItem("cart", JSON.stringify(updatedcart));
   };
 
   // Show confirmation modal
@@ -160,32 +159,22 @@ document.addEventListener("DOMContentLoaded", () => {
   checkoutButton.addEventListener("click", (e) => {
     e.preventDefault();
     const price = parseFloat(totalPrice.textContent.replace("$", ""));
-    localStorage.setItem(
-      "order",
-      JSON.stringify({ totalPrice: price, cartData })
-    );
+    localStorage.setItem("order", JSON.stringify({ totalPrice: price, cart }));
 
     window.location.href = "http://localhost/Bakery/order";
   });
 
   // Handle item removal
   modalConfirmButton.addEventListener("click", () => {
-    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
-    cartData.splice(itemToRemoveIndex, 1);
-    localStorage.setItem("cart", JSON.stringify(cartData));
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(itemToRemoveIndex, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
     loadCartFromLocalStorage();
     closeModal();
   });
 
   // Cancel item removal
-  modalCancelButton.addEventListener("click", () => {
-    closeModal();
-  });
+  modalCancelButton.addEventListener("click", closeModal);
 
-  // Initial load
   loadCartFromLocalStorage();
 });
-
-// const cart = JSON.parse(localStorage.setItem("cart"));
-
-// const x = [{ userName, phone, address, cart }];

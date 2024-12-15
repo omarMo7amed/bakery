@@ -57,7 +57,7 @@ class UserService
                 "/",
                 "localhost",
                 true,
-                true
+                false
             );
 
             $statement->close();
@@ -100,7 +100,7 @@ class UserService
                 "/",
                 "localhost",
                 true,
-                true
+                false
             );
             $_SESSION['user'] = $userId;
             http_response_code(200);
@@ -110,6 +110,33 @@ class UserService
             return json_encode(["error" => $exception->getMessage()]);
         }
     }
+
+    public function logout()
+    {
+        try {
+            setcookie(
+                "auth_token",
+                "",
+                time() - 3600,
+                "/",
+                "localhost",
+                true,
+                false
+            );
+
+            if (isset($_SESSION['user'])) {
+                unset($_SESSION['user']);
+            }
+
+            http_response_code(200);
+            return json_encode(["success" => "Logout successful"]);
+        } catch (Exception $exception) {
+            http_response_code(500);
+            return json_encode(["error" => "Failed to logout: " . $exception->getMessage()]);
+        }
+
+    }
+
     public function getUserById($id)
     {
         try {

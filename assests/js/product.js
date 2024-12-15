@@ -30,7 +30,6 @@ const getProduct = async () => {
     } = product;
 
     document.title = name;
-    // Generate the product HTML
     let imagesHtml = "";
     let dotsHtml = "";
 
@@ -95,12 +94,10 @@ const getProduct = async () => {
 
     productContainer.innerHTML = productHtml;
 
-    // Attach quantity update functionality
     attachQuantityHandlers(quantity);
 
     initializeSlider();
 
-    // Attach add-to-cart functionality
     document
       .querySelector(".add-to-cart")
       .addEventListener("click", () => updateCart(product));
@@ -114,7 +111,7 @@ const attachQuantityHandlers = (maxQuantity) => {
   const increaseButton = document.querySelector(".increase");
   const decreaseButton = document.querySelector(".decrease");
 
-  // Get current quantity from localStorage if exists
+  // Get current quantity from localStorage
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existingProduct = cart.find((prd) => prd.id === productId);
 
@@ -161,7 +158,6 @@ const attachQuantityHandlers = (maxQuantity) => {
       currentQuantity--;
       quantityDisplay.textContent = currentQuantity;
     } else if (currentQuantity === 1 && existingProduct) {
-      // Show confirmation modal to remove the item
       showModal();
     }
   });
@@ -174,7 +170,6 @@ const updateCart = (product) => {
     const existingProduct = cart.find((prd) => prd.id === id);
 
     if (currentQuantity > 0) {
-      // Ensure quantity is greater than 0
       if (existingProduct) {
         existingProduct.quantity = currentQuantity;
         alert(`${name} has been updated in your cart!`);

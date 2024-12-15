@@ -1,42 +1,51 @@
 const BASE_URL = "http://localhost/Bakery/api/users/login.php";
 
-document
-  .querySelector(".toggle-password")
-  .addEventListener("click", function () {
-    const passwordInput = document.getElementById("password");
-    const eyeIcon = document.getElementById("eye-icon");
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  const passwordInput = document.getElementById("password");
+  const eyeIcon = document.getElementById("eye-icon");
 
-    // Toggle between password and text
-    const isPassword = passwordInput.type === "password";
-    passwordInput.type = isPassword ? "text" : "password";
+  document.querySelector(".toggle-password").addEventListener("click", () => {
+    const isPasswordVisible = passwordInput.type === "password";
+    passwordInput.type = isPasswordVisible ? "text" : "password";
 
-    // Change the eye icon
-    eyeIcon.classList.toggle("fa-eye");
-    eyeIcon.classList.toggle("fa-eye-slash");
+    eyeIcon.classList.toggle("fa-eye", isPasswordVisible);
+    eyeIcon.classList.toggle("fa-eye-slash", !isPasswordVisible);
   });
 
-document.getElementById("login-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  console.log(email, password);
+    const email = document.getElementById("email").value.trim();
+    const password = passwordInput.value.trim();
 
-  if (!email && !password) return;
+    if (!email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
 
-  try {
-    const res = await fetch(BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    console.log(res);
-    if (!res.ok) return;
+    try {
+      const response = await fetch(BASE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    alert("login success");
-  } catch (err) {
-    console.error(err);
-  }
+      if (!response.ok) {
+        const { error } = await response.json();
+        alert(error || "Login failed. Please try again.");
+        return;
+      }
+
+      const result = await response.json();
+      alert("Login successful! Welcome back.");
+
+      window.location.href = "http://localhost/Bakery/menu";
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("An error occurred. Please try again later.");
+    }
+  });
 });

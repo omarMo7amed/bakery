@@ -1,3 +1,14 @@
+
+<?php 
+
+require_once '../helpers/helper.php';
+ if(isAuthenticated()){
+  header('Location: menu');
+  return null;
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,7 +60,7 @@
 
           <div class="links">
             <a href="#" class="forgot-password">Forgot Password?</a>
-            <a href="signup" class="sign-up">Sign Up</a>
+            <a href="signup" class="sign-up">Creat an Account</a>
           </div>
           
           <div class="buttons">
