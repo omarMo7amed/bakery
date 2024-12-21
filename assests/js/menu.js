@@ -9,10 +9,14 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const closeModalButton = document.querySelector(".close-modal");
 
+// console.log(closeModalButton);
+
 let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
 const productsPerPage = 8;
+
+const isAdmin = function () {};
 
 // modal functions
 const showModal = (product) => {
@@ -86,7 +90,7 @@ const renderProducts = () => {
           <ul class="product-options">
             <li class="info" title="View Details"><i class="fa-solid fa-info"></i></li>
             <li class="add-to-wishlist"><i class="fa-regular fa-heart"></i></li>
-            <li class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></li>
+            <li class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></li>   
           </ul>
         </li>`;
     productsContainer.insertAdjacentHTML("beforeend", productHTML);
@@ -232,6 +236,7 @@ const setupEvents = () => {
   //show modal
   productsContainer.addEventListener("click", (e) => {
     const infoIcon = e.target.closest(".info");
+    console.log(infoIcon);
     if (!infoIcon) return;
 
     const productId = infoIcon.closest(".product").dataset.id;
