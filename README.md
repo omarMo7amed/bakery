@@ -1,4 +1,4 @@
-# Zebda w Zaatar Bakery
+# Zebda w Zaatar
 
 Zebda w Zaatar Bakery is a user-friendly bakery application where customers can browse, order, and enjoy a variety of delicious cakes, bread, and croissants. The app provides a seamless shopping experience, complete with cart management, secure payments, and a delightful interface.
 
@@ -6,7 +6,6 @@ Zebda w Zaatar Bakery is a user-friendly bakery application where customers can 
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Contact](#contact)
@@ -22,46 +21,10 @@ Zebda w Zaatar Bakery is a user-friendly bakery application where customers can 
 
 ## Technologies Used
 
-- **Frontend**: ReactJS, React Router, Context API, Styled Components
-- **State Management**: React Query
-- **Backend**: Supabase (for authentication and database)
-- **Styling**: Styled Components
+- **Frontend**:HTML , CSS , JavaScript
+- **Backend**: PHP and MYSQL
 
-## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-- Node.js and npm installed on your local machine
-- An account with Supabase for backend services
-
-### Installation
-
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/your-repo/zebda-w-zaatar.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd zebda-w-zaatar
-   ```
-
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Running the App
-
-1. Start the development server:
-   ```bash
-   npm start
-   ```
-
-2. Open your browser and navigate to http://localhost:3000
-
+  
 ## Usage
 
 - **Browse Menu**: Explore the delicious offerings of Zebda w Zaatar Bakery
@@ -71,7 +34,16 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ## Screenshots
 
-[Include screenshots of your app showcasing key features]
+Include some screenshots of my app to show the UI and its features.  
+
+![Login Page](screenshots/login.png)
+![Home Page](screenshots/home.png)
+![bestSellers Section](screenshots/bestSellers.png)
+![product page](screenshots/product.png)
+![menu Page](screenshots/menu.png)
+![cart Page](screenshots/cart.png)
+![payment Page](screenshots/payment.png)
+![orderSummary Page](screenshots/orderSummary.png)
 
 ## Contact
 
