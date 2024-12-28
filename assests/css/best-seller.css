@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 120vh;
+  min-height: 50vh;
 }
 
 .best-seller .container {
@@ -82,6 +82,7 @@
 
 .best-seller .content .product img {
   width: 230px;
+  height: 230px;
   transition: all 0.3s ease-in-out;
 }
 

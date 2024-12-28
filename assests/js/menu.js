@@ -9,14 +9,10 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const closeModalButton = document.querySelector(".close-modal");
 
-// console.log(closeModalButton);
-
 let allProducts = [];
 let filteredProducts = [];
 let currentPage = 1;
 const productsPerPage = 8;
-
-const isAdmin = function () {};
 
 // modal functions
 const showModal = (product) => {
@@ -41,9 +37,11 @@ const closeModal = () => {
 
 const setupModalEvents = () => {
   closeModalButton.addEventListener("click", closeModal);
+  
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
+
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) closeModal();
   });

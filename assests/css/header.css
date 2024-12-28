@@ -183,7 +183,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
     background-color: #f6f2e9dc;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
     padding: 25px 20px;
@@ -195,6 +195,9 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
     transform: translateY(100%);
+  }
+  .items .cartItem .cart-quantity {
+    display: none;
   }
 
   .items .login-button,
@@ -218,11 +221,11 @@
   .items .item a,
   .items .cartItem a {
     display: block;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 25px;
     background-color: var(--text-active);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);

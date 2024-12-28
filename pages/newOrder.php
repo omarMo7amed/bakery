@@ -1,11 +1,11 @@
 
 <?php 
 
-require_once '../helpers/helper.php';
- if(!isAuthenticated()){
-  header('Location: login');
-  return null;
- }
+// require_once '../helpers/helper.php';
+//  if(!isAuthenticated()){
+//   header('Location: login');
+//   return null;
+//  }
 
 ?>
 

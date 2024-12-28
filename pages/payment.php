@@ -38,11 +38,13 @@ require_once '../helpers/helper.php';
 <?php include('../components/header.php')?>
 
   <div class="payment-page">
-
-
     <div class="payment-container">
       <h1>Payment Details</h1>
       <form id="paymentForm">
+        <div class="input-group">
+          <label for="name_on_card">Name on Card</label>
+          <input type="text" id="name_on_card" placeholder="John Doe" required>
+        </div>
         <div class="input-group">
           <label for="card_name">Card Number</label>
           <input type="text" id="card_name" placeholder="1234 5678 9012 3456" maxlength="16" required>
@@ -50,10 +52,6 @@ require_once '../helpers/helper.php';
         <div class="input-group">
           <label for="cvv">CVV</label>
           <input type="text" id="cvv" placeholder="123" maxlength="3" required>
-        </div>
-        <div class="input-group">
-          <label for="name_on_card">Name on Card</label>
-          <input type="text" id="name_on_card" placeholder="John Doe" required>
         </div>
         <button type="submit" class="btn-submit">Pay Now</button>
       </form>

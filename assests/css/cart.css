@@ -1,4 +1,3 @@
-/* General styles */
 @import url("global-style.css");
 
 .cart-page {
@@ -7,7 +6,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: calc(100vh - 60px);
+  min-height: 50vh;
 }
 
 .page-title {
@@ -42,6 +41,10 @@
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item:not(nth-last-of-type) {
+  margin-bottom: 15px;
 }
 
 .item-image {
@@ -120,12 +123,19 @@
 }
 
 /* Cart summary */
-.cart-summary {
+
+.cart-summary-container {
+  position: relative;
   flex: 1 1 30%;
+}
+.cart-summary {
+  position: sticky;
+  top: 0;
+  left: 0;
   background: #ffffff7a;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  max-height: fit-content;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

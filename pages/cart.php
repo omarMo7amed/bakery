@@ -57,24 +57,26 @@
   <a href="/bakery/menu" class="go-to-menu-button">Go to Menu</a>
 </div>
 
-      <div class="cart-summary">
-        <div class="cart-details">
-          <h2>Order Summary</h2>
-          <div class="summary-item">
-            <span>Subtotal</span>
-            <span class="subtotal-price">$15.00</span>
-          </div>
-          <div class="summary-item">
-            <span>Tax (10%)</span>
-            <span class="tax-price">$1.50</span>
-          </div>
-          <div class="summary-item total">
-            <span>Total</span>
-            <span class="total-price">$16.50</span>
-          </div>
-        </div>
-          <button class="checkout-btn">Checkout</button>
-       </div>
+<div class="cart-summary-container">
+  <div class="cart-summary">
+    <div class="cart-details">
+      <h2>Order Summary</h2>
+      <div class="summary-item">
+        <span>Subtotal</span>
+        <span class="subtotal-price">$15.00</span>
+      </div>
+      <div class="summary-item">
+        <span>Tax (10%)</span>
+        <span class="tax-price">$1.50</span>
+      </div>
+      <div class="summary-item total">
+        <span>Total</span>
+        <span class="total-price">$16.50</span>
+      </div>
+    </div>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
 
 <!-- Modal to remove item -->
   <div class="confirmation-modal">

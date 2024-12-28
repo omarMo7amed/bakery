@@ -60,6 +60,11 @@ a {
   margin-bottom: 5px;
 }
 
+.special-text img {
+  width: 80px;
+  height: 12px;
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 100%;

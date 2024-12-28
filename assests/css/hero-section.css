@@ -5,15 +5,17 @@
   background-repeat: no-repeat;
   padding-top: 120px;
   padding-bottom: 60px;
-  min-height: calc(100vh - 80px);
 }
 
 .heroSection .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  place-items: center;
   align-items: center;
-  min-height: inherit;
+  min-height: 600px;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -26,6 +28,7 @@
 
 .heroSection .container .content img {
   max-width: 600px;
+  max-height: 400px;
   transition: all 1s ease-in-out;
   opacity: 1;
   transform: scale(1);

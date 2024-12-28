@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const userInfoDiv = document.getElementById("user-info");
   const productListDiv = document.getElementById("product-list");
   const totalPriceDiv = document.getElementById("total-price");
-  
 
   try {
     const res = await fetch(
@@ -18,7 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       throw new Error(`Failed to fetch order data: ${res.statusText}`);
     }
 
-    const { username, phone_number, address, products } = await res.json();
+    const { username, phone_number, address, products, total_price } =
+      await res.json();
 
     userInfoDiv.innerHTML = `
       <h2>User Information</h2>
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     productListDiv.innerHTML = `<h2>Products</h2>${productsHTML}`;
 
-    totalPriceDiv.innerHTML = `<h2>Total Price</h2><p>$${orderData.total_price.toFixed(
+    totalPriceDiv.innerHTML = `<h2>Total Price</h2><p>$${total_price.toFixed(
       2
     )}</p>`;
   } catch (error) {

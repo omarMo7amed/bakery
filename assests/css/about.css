@@ -28,6 +28,7 @@
 
 .about .content .our-history > img {
   max-width: 400px;
+  max-height: 400px;
 }
 
 .about .content .our-history > p {
