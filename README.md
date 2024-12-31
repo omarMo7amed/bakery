@@ -44,6 +44,7 @@ Include some screenshots of my app to show the UI and its features.
 ![cart Page](screenshots/cart.png)
 ![payment Page](screenshots/payment.png)
 ![orderSummary Page](screenshots/orderSummary.png)
+![orderSummary Page](screenshots/performance.png)
 
 ## Contact
 
